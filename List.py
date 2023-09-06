@@ -24,3 +24,32 @@ for item in purchased_list:
 
 if len(special_items) > 0:
     print(f"Here's a list of items you purchased but were not on your shopping list: {special_items}")
+
+# PL--------------------------------------------------------------------------------
+
+lista_zakupow = ["ziemniak", "jablko", "olej", "mleko", "papier toaletowy"]
+lista_zakupow.append("baterie")
+lista_zakupow.insert(0, "czekolada")
+lista_zakupow[0] = "gorzka czekolada"
+lista_zakupow.pop()
+print(lista_zakupow)
+
+lista_zakupow_zakupione = ["gorzka czekolada", "ziemniak", "jablko", "olej", "papier toaletowy", "paluszki rybne"]
+
+niedostepne_produkty = []
+for produkt in lista_zakupow:
+    if produkt not in lista_zakupow_zakupione:
+        niedostepne_produkty.append(produkt)
+
+if len(niedostepne_produkty) > 0:
+    print(f"Oto lista produktów z Twojej listy zakupów, których nie zakupiłeś: {', '.join(niedostepne_produkty)}")
+else:
+    print(f"Dobra robota! Kupileś wszystko, co było na Twojej liście zakupóów!")
+
+specjalne_produkty = []
+for produkt in lista_zakupow_zakupione:
+    if produkt not in lista_zakupow:
+        specjalne_produkty.append(produkt)
+
+if len(specjalne_produkty) > 0:
+    print(f"Oto lista produktów, ktorę zakupiłeś, ale nie były na Twojej liście zakupów: {', '.join(specjalne_produkty)}")
